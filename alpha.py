@@ -1,3 +1,6 @@
+MAX_SCORE = 40
+
+
 class AlphaChecker:
     def score(self, a: str, b: str) -> int:
         set1 = set(a)
@@ -7,6 +10,6 @@ class AlphaChecker:
         total = len(set1 | set2)
 
         if total == 0:
-            return 40
+            return MAX_SCORE
 
-        return int(same / total * 40)
+        return int(same / total * MAX_SCORE)

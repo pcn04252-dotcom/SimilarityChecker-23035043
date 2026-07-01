@@ -3,7 +3,11 @@ class LengthChecker:
         long_len = max(len(a), len(b))
         short_len = min(len(a), len(b))
 
+        if long_len == short_len:
+            return 60
+
         if long_len >= short_len * 2:
             return 0
 
-        return 60
+        gap = long_len - short_len
+        return int((1 - gap / short_len) * 60)

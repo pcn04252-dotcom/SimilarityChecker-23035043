@@ -3,10 +3,10 @@ class AlphaChecker:
         set1 = set(a)
         set2 = set(b)
 
-        if set1 == set2:
+        same = len(set1 & set2)
+        total = len(set1 | set2)
+
+        if total == 0:
             return 40
 
-        if set1.isdisjoint(set2):
-            return 0
-
-        return 40
+        return int(same / total * 40)
